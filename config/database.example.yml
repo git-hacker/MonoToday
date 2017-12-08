@@ -2,7 +2,7 @@ development: &default
   adapter: mysql2
   database: monotoday
   username: root
-  password: '888888'
+  password: ''
   encoding: utf8mb4
   reconnect: true
   pool: 30

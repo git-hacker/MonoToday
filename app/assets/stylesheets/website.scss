@@ -1,0 +1,87 @@
+// Place all the styles related to the website controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing-page {
+  header {
+    background: rgba(#000, 0.3);
+    height: 26px;
+    padding: 24px 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+
+    img.logo {
+      height: 26px;
+      width: auto;
+    }
+  }
+
+  .banner-wrapper {
+    background-image: url("/assets/banner.png");
+    height: 700px;
+
+    .mask {
+      background-color: rgba(#000, 0.3);
+      height: 700px;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .banner-content {
+      padding-top: 236px;
+      position: relative;
+      text-align: center;
+      z-index: 2;
+
+      h1 {
+        color: #ffffff;
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .btn-start {
+        border-radius: 37.5px;
+        font-size: 26px;
+        margin-top: 74px;
+        padding: 24px 65px;
+      }
+    }
+  }
+
+  .efficient-time-manage {
+    text-align: center;
+
+    h2 {
+      font-size: 38px;
+      .primary {
+        color: #0096FF;
+      }
+    }
+
+    .description {
+      line-height: 22px;
+      color: #999999;
+
+      .serial-number {
+        background-color: #0096FF;
+        border-radius: 50%;
+        color: #fff;
+        display: inline-block;
+        height: 22px;
+        width: 22px;
+      }
+      .mark {
+        color: #333;
+      }
+    }
+
+    .demo {
+      width: 287px;
+      height: 400px;
+    }
+  }
+}
