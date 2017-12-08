@@ -1,0 +1,14 @@
+development: &default
+  adapter: mysql2
+  database: monotoday
+  username: root
+  password: '888888'
+  encoding: utf8mb4
+  reconnect: true
+  pool: 30
+  timeout : 3000
+  port: 3306
+
+test:
+  <<: *default
+  database: monotoday-test
