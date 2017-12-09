@@ -20,8 +20,18 @@
     }
   }
 
+  h2 {
+    font-size: 38px;
+  }
+
+  .sub-title {
+    font-size: 16px;
+    font-weight: 100;
+  }
+
   .banner-wrapper {
     background-image: url("/assets/banner.jpg");
+    background-size: cover;
     height: 700px;
 
     .mask {
@@ -62,7 +72,6 @@
     margin-top: 64px;
 
     h2 {
-      font-size: 38px;
       .primary {
         color: $color-primary;
       }
@@ -70,8 +79,6 @@
 
     .sub {
       color: #333;
-      font-size: 16px;
-      font-weight: 100;
     }
 
     .descriptions {
@@ -98,6 +105,20 @@
     .demo {
       width: 287px;
       height: 400px;
+    }
+  }
+
+  .comment-recommendation {
+    background-image: url("/assets/comment-bg.jpg");
+    background-size: cover;
+    color: $color-white;
+    height: 500px;
+    margin-top: 102px;
+    padding-top: 84px;
+    text-align: center;
+
+    h2 {
+      margin-top: 0;
     }
   }
 }
