@@ -47,12 +47,14 @@
     }
 
     .btn-start {
-      border: none;
+      background-image: linear-gradient(120deg, #007eff, #0096ff);
       border-radius: 37.5px;
+      border: none;
       font-size: 26px;
+      height: 75px;
       margin-top: 74px;
       outline: none;
-      padding: 24px 65px;
+      width: 240px;
     }
   }
 
