@@ -35,6 +35,9 @@ gem 'turbolinks', '~> 5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use simple_form for generate form
+gem 'simple_form'
+
 # Use awesome_print for format print log
 gem 'awesome_print'
 
