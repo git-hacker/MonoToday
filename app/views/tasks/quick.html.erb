@@ -1,4 +1,7 @@
-Quick List
-<% @tasks.each do |task| %>
-  <p><%= task.title %></p>
-<% end %>
+<ul class="tasks">
+  <% @tasks.each do |task| %>
+    <li>
+      <span><%= task.title %></span>
+    </li>
+  <% end %>
+</ul>
