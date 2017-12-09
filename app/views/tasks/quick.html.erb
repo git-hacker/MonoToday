@@ -1,7 +1,12 @@
 <ul class="tasks">
-  <% @tasks.each do |task| %>
+  <% @tasks.each_with_index do |task, index| %>
     <li>
-      <span><%= task.title %></span>
+      <span><%= "#{index + 1}.#{task.title}" %></span>
+    </li>
+  <% end %>
+  <% (5 - @tasks.count).times do |index| %>
+    <li>
+      <span><%= "#{index + @tasks.count + 1}." %>placeholder</span>
     </li>
   <% end %>
 </ul>

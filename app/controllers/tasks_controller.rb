@@ -13,10 +13,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(create_task_params.merge(user_uuid: @user_uuid))
-    if @task.save
-      redirect_to :quick_tasks
-    end
+    TaskService.create_task(create_task_params.merge(user_uuid: @user_uuid))
+    redirect_to :quick_tasks
   end
 
   private

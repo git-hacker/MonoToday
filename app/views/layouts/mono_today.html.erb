@@ -10,11 +10,11 @@
 
   <body>
     <header>
-      <img class="logo" src="/assets/monotoday-logo@2x.png" alt="MonoToday">
+      <img class="logo" src="/assets/mono-logo-black.png" alt="MonoToday">
     </header>
     <%= simple_form_for Task.new do |f| %>
       <%= f.submit '添加', class: 'btn btn-primary submit' %>
-      <%= f.input :title, label: false, input_html: { class: 'create-task-input' }, placeholder: '添加 #接下来最应该开始的工作#' %>
+      <%= f.input :title, label: false, required: true, autofocus: true, input_html: { class: 'create-task-input' }, placeholder: '添加 #接下来最应该开始的工作#' %>
       <%= f.input :queue, as: :hidden, input_html: { value: @queue } %>
     <% end %>
     <ul class="tab">
