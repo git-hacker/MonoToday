@@ -13,13 +13,14 @@
       <img class="logo" src="/assets/monotoday-logo@2x.png" alt="MonoToday">
     </header>
     <%= simple_form_for Task.new do |f| %>
-      <%= f.input :title, label: false, placeholder: '添加 #接下来最应该开始的工作#' %>
+      <%= f.submit '添加', class: 'btn btn-primary submit' %>
+      <%= f.input :title, label: false, input_html: { class: 'create-task-input' }, placeholder: '添加 #接下来最应该开始的工作#' %>
       <%= f.input :queue, as: :hidden, input_html: { value: @queue } %>
     <% end %>
     <ul class="tab">
-      <li><a href="/tasks/quick">快捷清单</a></li>
-      <li><a href="/tasks/grass-catcher">集草器</a></li>
-      <li><a href="">完成</a></li>
+      <li class="<%= 'active' if action_name == 'quick' %>"><a href="/tasks/quick">快捷清单</a></li>
+      <li class="<%= 'active' if action_name == 'grass_catcher' %>"><a href="/tasks/grass-catcher">集草器</a></li>
+      <li><a href="">成就</a></li>
     </ul>
     <%= yield %>
   </body>
