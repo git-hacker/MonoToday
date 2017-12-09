@@ -1,0 +1,11 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+// Import custom variables
+@import "./variables";
+// Import bootstrap
+@import "bootstrap";
+
+// Import normalize styles
+@import "./normalize";
+// Import pages styles
+@import "./tasks";
