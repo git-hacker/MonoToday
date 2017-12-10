@@ -1,0 +1,20 @@
+@import './variables';
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none !important;
+}
+
+.btn {
+  &.btn-primary {
+    &:hover {
+      background-color: darken($color-primary, 5);
+    }
+    &:active,
+    &:focus {
+      background-color: $color-primary;
+    }
+  }
+}
