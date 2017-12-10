@@ -8,13 +8,16 @@ class TasksController < ApplicationController
   end
 
   def grass_catcher
-    @queue = 'grass'
-    @tasks = Task.where(user_uuid: @user_uuid, queue: 'grass')
+    @queue = 'grass-catcher'
+    @tasks = Task.where(user_uuid: @user_uuid, queue: 'grass-catcher')
   end
 
   def create
-    TaskService.create_task(create_task_params.merge(user_uuid: @user_uuid))
-    redirect_to :quick_tasks
+    @task = TaskService.create_task(create_task_params.merge(user_uuid: @user_uuid))
+    respond_to do |format|
+      format.html { redirect_to quick_tasks_url }
+      format.js
+    end
   end
 
   private
