@@ -2,14 +2,18 @@ $(function() {
   <%# 清空输入框 %>
   $('.create-task-input')[0].value = '';
 
-  var queue = '<%= @task.queue %>'
+  var queue = '<%= @task.queue %>';
+
+  <% template = render partial: 'task', locals: { task: @task } %>
+  var template = "<%= template.delete("\n") %>";
+  template = unescapeHTML(template);
 
   if (queue === 'quick') {
     var items = $('.tasks.quick > li');
     for(var i=0; i<items.length; i++) {
       var item = $(items[i]);
       if(item.text().indexOf('等待添加') !== -1) {
-        item.before(`<li><span>${i+1}.<%= @task.title %></span></li>`);
+        item.before(template);
         item.remove();
         break;
       }
@@ -17,7 +21,7 @@ $(function() {
   } else if (queue === 'grass-catcher') {
     var list = $('.tasks.grass-catcher');
     if (list.length > 0) {
-      list.append(`<li><span><%= @task.title %></span></li>`)
+      list.append(template);
     }
   }
 });

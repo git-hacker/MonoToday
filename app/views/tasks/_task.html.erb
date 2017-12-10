@@ -1,0 +1,12 @@
+<li>
+  <span><%= "#{task.title}" %></span>
+  <div class="actions">
+    <a href="#"><img src="/assets/complete@2x.png" alt="Complete"></a>
+    <% if task.queue === 'quick' %>
+      <a href="#"><img src="/assets/transfer-right@2x.png" alt="MoveToGrass"></a>
+    <% elsif task.queue === 'grass-catcher' %>
+      <a href="#"><img src="/assets/transfer-left@2x.png" alt="MoveToQuick"></a>
+    <% end %>
+    <a href="#"><img src="/assets/remove@2x.png" alt="Remove"></a>
+  </div>
+</li>

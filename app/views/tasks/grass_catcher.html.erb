@@ -1,7 +1,5 @@
 <ul class="tasks grass-catcher">
   <% @tasks.each do |task| %>
-    <li>
-      <span><%= task.title %></span>
-    </li>
+    <%= render partial: 'task', locals: { task: task } %>
   <% end %>
 </ul>

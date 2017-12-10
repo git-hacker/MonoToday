@@ -1,12 +1,10 @@
 <ul class="tasks quick">
-  <% @tasks.each_with_index do |task, index| %>
-    <li>
-      <span><%= "#{index + 1}.#{task.title}" %></span>
-    </li>
+  <% @tasks.each do |task| %>
+    <%= render partial: 'task', locals: { task: task } %>
   <% end %>
   <% (5 - @tasks.count).times do |index| %>
     <li>
-      <span><%= "#{index + @tasks.count + 1}." %>等待添加</span>
+      <span>等待添加</span>
     </li>
   <% end %>
 </ul>

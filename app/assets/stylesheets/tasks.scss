@@ -18,7 +18,7 @@ header {
   margin: 76px auto 0;
   box-shadow: 0 5px 10px 0 rgba(6, 0, 1, 0.1);
   overflow: hidden;
-  
+
   .create-task-input {
     background-color: #ffffff;
     border-radius: 3px;
@@ -78,6 +78,7 @@ header {
   height: 340px;
   list-style: none;
   margin: 40px auto 0;
+  overflow: scroll;
   padding: 25px 22px;
   width: 330px;
 
@@ -88,10 +89,30 @@ header {
     font-size: 16px;
     height: 50px;
     line-height: 50px;
-    padding: 0 10px;
-    
+    padding: 0 16px 0 10px;
+
     & + li {
       margin-top: 10px;
+    }
+
+    .actions {
+      display: none;
+      float: right;
+      margin-top: -1px;
+
+      a + a {
+        margin-left: 10px;
+      }
+      img {
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    &:hover {
+      .actions {
+        display: block;
+      }
     }
   }
 
