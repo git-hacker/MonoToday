@@ -4,6 +4,8 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.string :user_uuid, null: false
       t.string :title, null: false
       t.string :queue, null: false
+      t.datetime :completed_at
+      t.datetime :deleted_at
       t.timestamps
     end
 

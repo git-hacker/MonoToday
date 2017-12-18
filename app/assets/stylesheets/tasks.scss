@@ -100,9 +100,14 @@ header {
       float: right;
       margin-top: -1px;
 
-      a + a {
-        margin-left: 10px;
+      a {
+        text-decoration: none;
+
+        & + a {
+          margin-left: 10px;
+        }
       }
+
       img {
         height: 15px;
         width: 15px;

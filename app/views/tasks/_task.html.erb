@@ -1,9 +1,11 @@
 <li>
   <span><%= "#{task.title}" %></span>
   <div class="actions">
-    <a href="#"><img src="/assets/complete@2x.png" alt="Complete"></a>
+    <%= link_to complete_task_path(task), method: 'POST', remote: true do  %>
+      <img src="/assets/complete@2x.png" alt="Complete">
+    <% end %>
     <% if task.queue === 'quick' %>
-      <a href="#"><img src="/assets/transfer-right@2x.png" alt="MoveToGrass"></a>
+      <a href="<%=  %>" method="POST" ><img src="/assets/transfer-right@2x.png" alt="MoveToGrass"></a>
     <% elsif task.queue === 'grass-catcher' %>
       <a href="#"><img src="/assets/transfer-left@2x.png" alt="MoveToQuick"></a>
     <% end %>

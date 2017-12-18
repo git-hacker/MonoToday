@@ -1,9 +1,11 @@
 # == Route Map
 #
-#      Prefix Verb URI Pattern            Controller#Action
-#        root GET  /                      website#index
-# quick_tasks GET  /tasks/quick(.:format) tasks#quick
-#       tasks POST /tasks(.:format)       tasks#create
+#              Prefix Verb URI Pattern                    Controller#Action
+#                root GET  /                              website#index
+#         quick_tasks GET  /tasks/quick(.:format)         tasks#quick
+# grass_catcher_tasks GET  /tasks/grass-catcher(.:format) tasks#grass_catcher
+#       complete_task POST /tasks/:id/complete(.:format)  tasks#complete
+#               tasks POST /tasks(.:format)               tasks#create
 # 
 
 Rails.application.routes.draw do
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
     collection do
       get 'quick'
       get 'grass-catcher'
+    end
+    member do
+      post 'complete'
     end
   end
 end

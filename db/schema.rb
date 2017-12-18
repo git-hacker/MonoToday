@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20171209140332) do
     t.string "user_uuid", null: false
     t.string "title", null: false
     t.string "queue", null: false
+    t.datetime "completed_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_uuid"], name: "index_tasks_on_user_uuid"

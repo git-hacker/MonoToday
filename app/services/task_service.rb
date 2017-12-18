@@ -6,4 +6,8 @@ class TaskService
 
     Task.create(params)
   end
+
+  def self.complete(task)
+    task.update(completed_at: Time.now)
+  end
 end

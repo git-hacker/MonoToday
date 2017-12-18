@@ -4,18 +4,25 @@ class TasksController < ApplicationController
 
   def quick
     @queue = 'quick'
-    @tasks = Task.where(user_uuid: @user_uuid, queue: 'quick')
+    @tasks = Task.in_quick.where(user_uuid: @user_uuid)
   end
 
   def grass_catcher
     @queue = 'grass-catcher'
-    @tasks = Task.where(user_uuid: @user_uuid, queue: 'grass-catcher')
+    @tasks = Task.in_grass_catcher.where(user_uuid: @user_uuid)
   end
 
   def create
     @task = TaskService.create_task(create_task_params.merge(user_uuid: @user_uuid))
     respond_to do |format|
-      format.html { redirect_to quick_tasks_url }
+      format.js
+    end
+  end
+
+  def complete
+    @task = Task.find_by(id: params[:id], user_uuid: @user_uuid)
+    TaskService.complete(@task)
+    respond_to do |format|
       format.js
     end
   end
