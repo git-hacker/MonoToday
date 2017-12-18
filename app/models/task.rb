@@ -30,4 +30,8 @@ class Task < ApplicationRecord
   scope :in_completed, lambda { 
     Task.where.not(completed_at: nil)
   }
+
+  def completed?
+    completed_at != nil
+  end
 end

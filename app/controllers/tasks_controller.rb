@@ -12,6 +12,11 @@ class TasksController < ApplicationController
     @tasks = Task.by_user_uuid(@user_uuid).in_grass_catcher
   end
 
+  def completed
+    @queue = 'completed'
+    @tasks = Task.by_user_uuid(@user_uuid).in_completed
+  end
+
   def create
     @task = TaskService.create_task(create_task_params.merge(user_uuid: @user_uuid))
     respond_to do |format|

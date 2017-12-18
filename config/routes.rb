@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     collection do
       get 'quick'
       get 'grass-catcher'
+      get 'completed'
     end
     member do
       post 'complete'
