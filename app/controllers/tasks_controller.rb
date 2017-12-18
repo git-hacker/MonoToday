@@ -4,12 +4,12 @@ class TasksController < ApplicationController
 
   def quick
     @queue = 'quick'
-    @tasks = Task.in_quick.where(user_uuid: @user_uuid)
+    @tasks = Task.by_user_uuid(@user_uuid).in_quick
   end
 
   def grass_catcher
-    @queue = 'grass-catcher'
-    @tasks = Task.in_grass_catcher.where(user_uuid: @user_uuid)
+    @queue = 'grass_catcher'
+    @tasks = Task.by_user_uuid(@user_uuid).in_grass_catcher
   end
 
   def create

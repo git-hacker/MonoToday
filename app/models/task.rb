@@ -15,6 +15,10 @@
 class Task < ApplicationRecord
   validates :queue, inclusion: { in: %w(quick grass_catcher) }
   
+  scope :by_user_uuid, lambda { |user_uuid|
+    Task.where(user_uuid: user_uuid)
+  }
+
   scope :in_quick, lambda { 
     Task.where(queue: 'quick', completed_at: nil)
   }

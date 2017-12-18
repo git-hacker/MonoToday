@@ -1,2 +1,8 @@
-console.log('Complete task');
-console.log('<%= @task.id %>');
+$(function() {
+  var taskId = '#task-id-<%= @task.id %>';
+  $(taskId).fadeOut({ complete: function() {
+    $(taskId).remove();
+    $('.tasks.<%= @task.queue %>').append('<li><span>等待添加</span></li>');
+  }});
+});
+
