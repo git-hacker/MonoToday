@@ -13,12 +13,20 @@ class TasksController < ApplicationController
   end
 
   def completed
-    @queue = 'completed'
+    @queue = 'quick'
     @tasks = Task.by_user_uuid(@user_uuid).in_completed
   end
 
   def create
     @task = TaskService.create_task(create_task_params.merge(user_uuid: @user_uuid))
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    @task = Task.find_by(id: params[:id], user_uuid: @user_uuid)
+    TaskService.destroy(@task)
     respond_to do |format|
       format.js
     end

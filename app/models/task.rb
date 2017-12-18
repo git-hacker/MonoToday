@@ -13,6 +13,9 @@
 #
 
 class Task < ApplicationRecord
+  # Inject soft delete
+  acts_as_paranoid
+
   validates :queue, inclusion: { in: %w(quick grass_catcher) }
   
   scope :by_user_uuid, lambda { |user_uuid|

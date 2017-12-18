@@ -10,4 +10,8 @@ class TaskService
   def self.complete(task)
     task.update(completed_at: Time.now)
   end
+
+  def self.destroy(task)
+    task.destroy
+  end
 end

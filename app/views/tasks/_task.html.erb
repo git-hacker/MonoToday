@@ -11,6 +11,8 @@
         <a href="#"><img src="/assets/icon-left.png" alt="MoveToQuick"></a>
       <% end %>
     <% end %>
-    <a href="#"><img src="/assets/icon-trash.png" alt="Remove"></a>
+    <%= link_to task_path(task), method: 'DELETE', remote: true do  %>
+      <img src="/assets/icon-trash.png" alt="Remove">
+    <% end %>
   </div>
 </li>

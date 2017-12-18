@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20171209140332) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["completed_at"], name: "index_tasks_on_completed_at"
+    t.index ["deleted_at"], name: "index_tasks_on_deleted_at"
+    t.index ["queue"], name: "index_tasks_on_queue"
     t.index ["user_uuid"], name: "index_tasks_on_user_uuid"
   end
 
