@@ -1,0 +1,8 @@
+$(function() {
+  $('.tasks.quick').append('<li><span>等待添加</span></li>');
+
+  var taskId = '#task-id-<%= @task.id %>';
+  $(taskId).slideUp({ complete: function() {
+    $(taskId).remove();
+  }});
+});

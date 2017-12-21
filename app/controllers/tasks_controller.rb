@@ -24,6 +24,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def move_to_grass_catcher
+    @task = Task.find_by(id: params[:id], user_uuid: @user_uuid)
+    TaskService.move_to_grass_catcher(@task)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def destroy
     @task = Task.find_by(id: params[:id], user_uuid: @user_uuid)
     TaskService.destroy(@task)

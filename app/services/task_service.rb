@@ -11,6 +11,10 @@ class TaskService
     task.update(completed_at: Time.now)
   end
 
+  def self.move_to_grass_catcher(task)
+    task.update(queue: 'grass_catcher')
+  end
+
   def self.destroy(task)
     task.destroy
   end

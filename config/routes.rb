@@ -1,13 +1,14 @@
 # == Route Map
 #
-#              Prefix Verb   URI Pattern                    Controller#Action
-#                root GET    /                              website#index
-#         quick_tasks GET    /tasks/quick(.:format)         tasks#quick
-# grass_catcher_tasks GET    /tasks/grass-catcher(.:format) tasks#grass_catcher
-#     completed_tasks GET    /tasks/completed(.:format)     tasks#completed
-#       complete_task POST   /tasks/:id/complete(.:format)  tasks#complete
-#               tasks POST   /tasks(.:format)               tasks#create
-#                task DELETE /tasks/:id(.:format)           tasks#destroy
+#                     Prefix Verb   URI Pattern                                Controller#Action
+#                       root GET    /                                          website#index
+#                quick_tasks GET    /tasks/quick(.:format)                     tasks#quick
+#        grass_catcher_tasks GET    /tasks/grass-catcher(.:format)             tasks#grass_catcher
+#            completed_tasks GET    /tasks/completed(.:format)                 tasks#completed
+#              complete_task POST   /tasks/:id/complete(.:format)              tasks#complete
+# move_to_grass_catcher_task POST   /tasks/:id/move_to_grass_catcher(.:format) tasks#move_to_grass_catcher
+#                      tasks POST   /tasks(.:format)                           tasks#create
+#                       task DELETE /tasks/:id(.:format)                       tasks#destroy
 # 
 
 Rails.application.routes.draw do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     end
     member do
       post 'complete'
+      post 'move_to_grass_catcher'
     end
   end
 end
