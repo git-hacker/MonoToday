@@ -10,7 +10,9 @@
           <img src="/assets/icon-right.png" alt="MoveToGrassCatcher">
         <% end %>
       <% elsif task.queue === 'grass_catcher' %>
-        <a href="#"><img src="/assets/icon-left.png" alt="MoveToQuick"></a>
+        <%= link_to move_to_quick_task_path(task), method: 'POST', remote: true do  %>
+          <img src="/assets/icon-left.png" alt="MoveToQuick">
+        <% end %>
       <% end %>
     <% end %>
     <%= link_to task_path(task), method: 'DELETE', remote: true do  %>

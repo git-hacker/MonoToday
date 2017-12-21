@@ -1,0 +1,11 @@
+$(function() {
+  var isSuccess = <%= @result %>;
+  if (isSuccess) {
+    var taskId = '#task-id-<%= @task.id %>';
+    $(taskId).slideUp({ complete: function() {
+      $(taskId).remove();
+    }});
+  } else {
+    messageTip('快捷清单已满');
+  }
+});

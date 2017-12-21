@@ -32,6 +32,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def move_to_quick
+    @task = Task.find_by(id: params[:id], user_uuid: @user_uuid)
+    @result = TaskService.move_to_quick(@task)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def destroy
     @task = Task.find_by(id: params[:id], user_uuid: @user_uuid)
     TaskService.destroy(@task)

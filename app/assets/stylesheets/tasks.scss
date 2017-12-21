@@ -20,7 +20,7 @@ header {
   overflow: hidden;
 
   .create-task-input {
-    background-color: #ffffff;
+    background-color: $color-white;
     border-radius: 3px;
     border: none;
     float: left;
@@ -84,7 +84,7 @@ header {
 
   li {
     border-radius: 2px;
-    border: solid 1px rgba(#000000, 0.06);
+    border: solid 1px rgba($color-black, 0.06);
     color: rgba(38, 38, 38, 0.4);
     font-size: 16px;
     height: 50px;
@@ -152,5 +152,25 @@ footer {
   .guide-link {
     color: rgba(38, 38, 38, 0.25);
     font-size: 16px;
+  }
+}
+
+.message-tip-container {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  .message-tip {
+    background-color: rgba(0,0,0,.6);
+    border-radius: 3px;
+    color: $color-white;
+    padding: 12px 25px;
+    z-index: 1000;
+
+    & + .message-tip {
+      margin-top: 10px;
+    }
   }
 }

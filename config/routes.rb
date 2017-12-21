@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     member do
       post 'complete'
       post 'move_to_grass_catcher'
+      post 'move_to_quick'
     end
   end
 end
