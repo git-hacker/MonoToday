@@ -1,5 +1,12 @@
 <li id="task-id-<%= task.id %>">
-  <span><%= task.title %></span>
+  <% if task.completed? %>
+    <div class="header">
+      <img class="completed-icon" src="/assets/icon-comoleted.png" alt="Completed">
+    </div>
+  <% end %>
+  <span class="task-title" title="<%= task.title %>">
+    <%= task.title %>
+  </span>
   <div class="actions">
     <% if !task.completed? %>
       <%= link_to complete_task_path(task), method: 'POST', remote: true do  %>
