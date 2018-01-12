@@ -47,7 +47,7 @@ document.addEventListener("turbolinks:load", function() {
     $("footer").show();
     $(".clock-wrapper").hide();
 
-    $(".time").text("00:00");
+    $(".time").text("Ready Go");
     $("#circle").circleProgress({
       value: 1
     });
