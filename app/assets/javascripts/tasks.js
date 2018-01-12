@@ -1,29 +1,56 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+$(document).ready(function() {
+  var startTime;
+  var endTime;
+  var totalDiffMS;
+  var intervalHandle;
 
-function unescapeHTML(template) {
-  return template.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
-}
+  $("#circle").circleProgress({
+    startAngle: 1.5 * Math.PI,
+    value: 1,
+    size: 300,
+    thickness: 6,
+    reverse: true,
+    fill: {
+      color: "#0096FF"
+    },
+    animation: false
+  });
 
-function messageTip(msg) {
-  var msgId = Math.floor(Math.random() * 1000000).toString();
+  $(".btn-start").on("click", function() {
+    startDownCount();
+  });
 
-  var container = $('.message-tip-container');
-  if (container.length === 0) {
-    $('body').append(`<div class="message-tip-container"></div>`)
-    container = $('.message-tip-container');
+  function startDownCount() {
+    $(".tasks-content").hide();
+    $("footer").hide();
+    $(".clock-wrapper").show();
+
+    startTime = moment();
+    endTime = getNextEndTime();
+    totalDiffMS = endTime.diff(startTime);
+
+    intervalHandle = setInterval(function() {
+      var surplusDiffMS = endTime.diff(moment());
+      if (surplusDiffMS > 0) {
+        $(".time").text(moment(surplusDiffMS).utc().format("mm:ss"));
+        $("#circle").circleProgress({ value: surplusDiffMS / totalDiffMS });
+      } else {
+        onDownCountEnd();
+      }
+    }, 1000);
   }
 
-  container.append(`<div id="message-tip-${msgId}" class="message-tip" style="display: none;">${msg}</div>`)
-  $('.message-tip').fadeIn();
+  function onDownCountEnd() {
+    $(".tasks-content").show();
+    $("footer").show();
+    $(".clock-wrapper").hide();
 
-  function clearMessageTip(msgId) {
-    return function() {
-      $(`#message-tip-${msgId}`).fadeOut({ complete: function() {
-        $(`#message-tip-${msgId}`).remove();
-      }});
-    }
+    $(".time").text("00:00");
+    $("#circle").circleProgress({
+      value: 1
+    });
+    clearInterval(intervalHandle);
   }
-
-  setTimeout(clearMessageTip(msgId), 5000);
-}
+});

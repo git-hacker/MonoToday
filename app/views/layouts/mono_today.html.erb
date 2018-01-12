@@ -12,18 +12,28 @@
     <header>
       <img class="logo" src="/assets/mono-logo-black.png" alt="MonoToday">
     </header>
-    <%= simple_form_for Task.new, remote: true do |f| %>
-      <%= f.submit '添加', class: 'btn btn-primary submit' %>
-      <%= f.input :title, label: false, required: true, autofocus: true, input_html: { class: 'create-task-input' }, placeholder: '添加 #接下来最应该开始的工作#' %>
-      <%= f.input :queue, as: :hidden, input_html: { value: @queue } %>
-    <% end %>
-    <%= yield %>
-    <ul class="tab">
-      <li class="<%= 'active' if action_name == 'quick' %>"><a href="/tasks/quick">快捷清单</a></li>
-      <li class="<%= 'active' if action_name == 'grass_catcher' %>"><a href="/tasks/grass-catcher">集草器</a></li>
-      <li class="<%= 'active' if action_name == 'completed' %>"><a href="/tasks/completed">成就</a></li>
-    </ul>
-    <button class="btn btn-primary btn-start">开始单核</button>
+    <div class="tasks-content">
+      <%= simple_form_for Task.new, remote: true do |f| %>
+        <%= f.submit '添加', class: 'btn btn-primary submit' %>
+        <%= f.input :title, label: false, required: true, autofocus: true, input_html: { class: 'create-task-input' }, placeholder: '添加 #接下来最应该开始的工作#' %>
+        <%= f.input :queue, as: :hidden, input_html: { value: @queue } %>
+      <% end %>
+      <%= yield %>
+      <ul class="tab">
+        <li class="<%= 'active' if action_name == 'quick' %>"><a href="/tasks/quick">快捷清单</a></li>
+        <li class="<%= 'active' if action_name == 'grass_catcher' %>"><a href="/tasks/grass-catcher">集草器</a></li>
+        <li class="<%= 'active' if action_name == 'completed' %>"><a href="/tasks/completed">成就</a></li>
+      </ul>
+      <button class="btn btn-primary btn-start">开始单核</button>
+    </div>
+    <div class="clock-wrapper">
+      <div class="clock-content">
+        <span class="time">00:00</span>
+        <div id="circle"></div>
+      </div>
+      <span class="underway-task">#写一篇评测报告#</span>
+      <span class="desc">进行中</span>
+    </div>
     <footer>
       <a class="guide-link" href="https://baike.baidu.com/item/%E5%8D%95%E6%A0%B8%E5%B7%A5%E4%BD%9C%E6%B3%95/22119461?fr=aladdin" target="blank">什么是单核工作法？</a>
     </footer>

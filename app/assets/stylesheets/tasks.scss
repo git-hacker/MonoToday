@@ -173,6 +173,37 @@ footer {
   }
 }
 
+.clock-wrapper {
+  display: none;
+  text-align: center;
+  margin-top: 120px;
+
+  .clock-content {
+    .time {
+      color: $brand-primary;
+      display: block;
+      font-size: 46px;
+      line-height: 300px;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  .underway-task {
+    margin-top: 40px;
+    display: block;
+    color: #262626;
+    font-size: 24px;
+  }
+
+  .desc {
+    margin-top: 5px;
+    display: block;
+    color: rgba(38, 38, 38, 0.3);
+    font-size: 18px;
+  }
+}
+
 .message-tip-container {
   left: 50%;
   position: absolute;
