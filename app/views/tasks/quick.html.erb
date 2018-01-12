@@ -3,8 +3,8 @@
     <%= render partial: 'task', locals: { task: task } %>
   <% end %>
   <% (5 - @tasks.count).times do |index| %>
-    <li>
-      <span>等待添加</span>
+    <li class="wait-to-add">
+      <span></span>
     </li>
   <% end %>
 </ul>

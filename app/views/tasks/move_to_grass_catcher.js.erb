@@ -1,5 +1,5 @@
 $(function() {
-  $('.tasks.quick').append('<li><span>等待添加</span></li>');
+  $('.tasks.quick').append('<li class="wait-to-add"><span></span></li>');
 
   var taskId = '#task-id-<%= @task.id %>';
   $(taskId).slideUp({ complete: function() {

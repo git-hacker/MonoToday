@@ -12,7 +12,7 @@ $(function() {
     var items = $('.tasks.quick > li');
     for(var i=0; i<items.length; i++) {
       var item = $(items[i]);
-      if(item.text().indexOf('等待添加') !== -1) {
+      if(item.hasClass('wait-to-add')) {
         item.before(template);
         item.remove();
         break;

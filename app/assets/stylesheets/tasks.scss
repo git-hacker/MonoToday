@@ -43,7 +43,7 @@ header {
 
 
 .tab {
-  font-size: 14px;
+  font-size: 15px;
   list-style: none;
   overflow: hidden;
   padding: 0;
@@ -53,7 +53,7 @@ header {
 
   li {
     display: inline-block;
-    padding: 5px 12px;
+    padding: 5px 10px;
     
     &.active {
       border-radius: 14px;
@@ -78,7 +78,6 @@ header {
   height: 340px;
   list-style: none;
   margin: 40px auto 0;
-  overflow: scroll;
   padding: 25px 22px;
   width: 360px;
 
@@ -141,6 +140,8 @@ header {
   }
 
   &.quick {
+    overflow-y: hidden;
+
     li {
       &:first-child {
         background-color: $color-primary;
@@ -150,6 +151,14 @@ header {
       background-color: rgba($color-black, 0.06);
       color: rgba(38, 38, 38, 0.55);
     }
+  }
+
+  &.grass_catcher {
+    overflow-y: auto;    
+  }
+
+  &.completed {
+    overflow-y: auto;    
   }
 }
 

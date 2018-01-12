@@ -14,7 +14,7 @@
     </header>
     <div class="tasks-content">
       <%= simple_form_for Task.new, remote: true do |f| %>
-        <%= f.submit '添加', class: 'btn btn-primary submit' %>
+        <button type="submit" class="btn btn-primary submit"><img src="/assets/icon-enter.png" alt="submit"></button>
         <%= f.input :title, label: false, required: true, autofocus: true, input_html: { class: 'create-task-input' }, placeholder: '添加 #接下来最应该开始的工作#' %>
         <%= f.input :queue, as: :hidden, input_html: { value: @queue } %>
       <% end %>
