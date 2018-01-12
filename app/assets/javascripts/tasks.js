@@ -1,6 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-$(document).ready(function() {
+document.addEventListener("turbolinks:load", function() {
   var startTime;
   var endTime;
   var totalDiffMS;
@@ -47,7 +47,7 @@ $(document).ready(function() {
     $("footer").show();
     $(".clock-wrapper").hide();
 
-    $(".time").text("00:00");
+    $(".time").text("Ready Go");
     $("#circle").circleProgress({
       value: 1
     });
