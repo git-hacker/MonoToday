@@ -170,4 +170,12 @@
       color: $color-primary;
     }
   }
+
+  .iframe-container {
+    overflow: hidden
+  }
+
+  iframe {
+    margin-top: -100px;
+  }
 }
