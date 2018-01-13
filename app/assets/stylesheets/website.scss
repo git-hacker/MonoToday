@@ -12,9 +12,26 @@
     width: 100%;
     z-index: 10;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     img.logo {
       height: 26px;
       width: auto;
+    }
+
+    .header-menu {
+      a,
+      a:hover,
+      a:active {
+        margin-left: 30px;
+
+        font-size: 16px;
+        color: $color-white;
+        text-decoration: none;    
+      }
     }
   }
 
