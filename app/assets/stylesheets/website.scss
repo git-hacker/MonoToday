@@ -157,3 +157,17 @@
     }
   }
 }
+
+.quick-start {
+  padding-top: 160px;  
+  text-align: center;  
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+
+    .primary {
+      color: $color-primary;
+    }
+  }
+}
