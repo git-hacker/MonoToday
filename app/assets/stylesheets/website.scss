@@ -25,6 +25,7 @@
     .header-menu {
       a,
       a:hover,
+      a:focus,
       a:active {
         margin-left: 30px;
 
@@ -202,8 +203,18 @@ footer {
 
   padding: 20px 0;
 
-  span {
-    font-size: 14px;
+  font-size: 14px;
+
+  .tip {
+    color: $color-light-gray;   
+    margin-right: 15px;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    color: rgba(38, 38, 38, 0.25);
 
     padding-left: 5px;
     padding-right: 8px;
@@ -211,16 +222,7 @@ footer {
     border-right: 1px solid rgba(38, 38, 38, 0.25);
   }
 
-  .tip {
-    margin-right: 5px;    
-    color: $color-light-gray;    
-  }
-
   .none-border {
     border: none;
-  }
-
-  .footer-link {
-    color: rgba(38, 38, 38, 0.25);
   }
 }
