@@ -19,6 +19,10 @@ document.addEventListener("turbolinks:load", function() {
   });
 
   $(".btn-start").on("click", function() {
+    if ($('.current-task').text() === '##') {
+      messageTip('快捷清单还没有任务，快去添加吧');
+      return ;
+    }
     startDownCount();
   });
 

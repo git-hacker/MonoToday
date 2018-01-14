@@ -29,5 +29,5 @@ function messageTip(msg) {
     };
   }
 
-  setTimeout(clearMessageTip(msgId), 5000);
+  setTimeout(clearMessageTip(msgId), 3500);
 }

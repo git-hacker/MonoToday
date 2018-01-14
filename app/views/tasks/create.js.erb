@@ -24,4 +24,6 @@ $(function() {
       list.append(template);
     }
   }
+
+  $('.current-task').text('#<%= @current_task && @current_task.title %>#');
 });

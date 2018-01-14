@@ -8,4 +8,6 @@ $(function() {
   } else {
     messageTip('快捷清单已满');
   }
+
+  $('.current-task').text('#<%= @current_task && @current_task.title %>#');
 });

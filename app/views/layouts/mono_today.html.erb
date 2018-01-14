@@ -31,7 +31,7 @@
         <span class="time">Ready Go</span>
         <div id="circle"></div>
       </div>
-      <span class="underway-task">#写一篇评测报告#</span>
+      <span class="current-task">#<%= @current_task && @current_task.title %>#</span>
       <span class="desc">进行中</span>
       <button class="btn btn-primary btn-stop">停止单核</button>
     </div>
